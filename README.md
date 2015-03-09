@@ -56,6 +56,7 @@ My ansible playbooks.
   - include: nginx/nginx.yml
     vars:
       delete_default_vhost: true
+
   - include: nginx/vhost-redirect.yml
     vars:
       name: redirect_$server_name
