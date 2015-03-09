@@ -1,8 +1,6 @@
 nginx
 =====
 
-## nginx
-
 This playbook install the nginx package in the subdirectory of /nwea-techops/tech_quiz on a given host.
 To edit default subdirectory location change the location directive in the ./templates/nginx.conf.j2 file.
 
