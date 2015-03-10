@@ -1,0 +1,15 @@
+---
+  - hosts: webservers
+    sudo: yes 
+
+    vars:
+      name: redirect_example.org
+      listen: "*:8888"
+      server_name: github.com
+      redirect_url: http://www.$server_name
+
+    tasks:
+      - include: tasks/setup-vhost-redirect.yml
+
+    handlers:
+      - include: handlers/handlers.yml

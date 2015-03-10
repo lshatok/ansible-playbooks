@@ -1,0 +1,13 @@
+---
+  - name: install policycoreutils-python and set local selinux and firewall for port 8888
+    action: yum name=policycoreutils-python
+
+  - shell: semanage port -a -t http_port_t -p tcp 8888
+
+  - shell: firewall-cmd --permanent --zone=public --add-service=http  --permanent
+  - shell: firewall-cmd --permanent --zone=public --add-service=https --permanent
+  - shell: firewall-cmd --permanent --zone=public --add-port=8888/tcp --permanent
+  - shell: firewall-cmd --reload
+
+  - name: prepare nginx repo 
+    action: template src=templates/nginx.repo.j2 dest=/etc/yum.repos.d/nginx.repo
