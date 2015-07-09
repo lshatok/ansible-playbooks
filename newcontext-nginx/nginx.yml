@@ -8,7 +8,7 @@
       worker_processes: $ansible_processor_count
       pid: /var/run/nginx.pid
       worker_connections: 768
-      listen: 8888
+      listen: 8000
 
     tasks:
       - include: tasks/setup-nginx.yml
