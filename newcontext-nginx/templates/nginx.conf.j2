@@ -57,13 +57,5 @@ server {
 
         proxy_set_header X-Forwarded-For $remote_addr;
 
-    # Change the location directive to change the subdirectory location
-    location /newcontext-techops/tech_quiz {
-        autoindex         on;
-        root             /usr/share/nginx/html;
-        try_files $uri $uri/ /index.html?$query_string; 
-    }
-
-
     }
 }

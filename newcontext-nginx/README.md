@@ -1,7 +1,7 @@
 nginx
 =====
 
-This playbook install the nginx package on a given host serving files from /usr/share/nginx directory.
+This playbook install the nginx package on a given host serving files from /usr/share/nginx/html directory.
 
 To edit default subdirectory location change the location directive in the ./templates/nginx.conf.j2 file.
 
