@@ -1,10 +1,11 @@
 nginx
 =====
 
-This playbook install the nginx package in the subdirectory of /nwea-techops/tech_quiz on a given host.
+This playbook install the nginx package on a given host serving files from /usr/share/nginx directory.
+
 To edit default subdirectory location change the location directive in the ./templates/nginx.conf.j2 file.
 
-The ngnx service will run on port 8888 by default, to edit the default port make changes to the listen 
+The ngnx service will run on port 8000 by default, to edit the default port make changes to the listen 
 directive in the ./templates/nginx.conf.j2 file. 
 
 
@@ -28,15 +29,15 @@ directive in the ./templates/nginx.conf.j2 file.
 
 ### Usage ###
  1 Edit the webserver directive in your /etc/ansible/hosts file or your local .ansible/hosts file
- to include your target nginx server i.e. github.com
+ to include your target nginx server i.e. 10.10.10.108
 
- 2 Edit the ansible_ssh_user id with your github account ssh id.
+ 2 Edit the ansible_ssh_user id with your server's account ssh id.
 
 
 ## Example  /etc/ansible/hosts entry
 # 
  [webservers]
- github.com ansible_ssh_user=jed
+ 10.10.10.108 ansible_ssh_user=nathan
 
  Note, this solution was tested on Ubuntu 13 and Ubuntu 14 LTS servers and will run with a sudo user id
  to run the ansible playbook
@@ -61,7 +62,7 @@ This playbook add a simple redirect vhost for nginx.
     * Default: redirect_$server_name
 * **listen**:
     * Type: String
-    * Default: *:8888
+    * Default: *:8000
 * **server_name**: The server domain name
     * Type: String
     * Default:  defined in ansible webservers hosts directive
