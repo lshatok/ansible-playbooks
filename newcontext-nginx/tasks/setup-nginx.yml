@@ -1,6 +1,9 @@
 ---
   - name: install nginx
     action: apt name=nginx
+  
+  - name: install default newcontext index.html
+    action: template path=/usr/share/nginx/index.html dest=/usr/share/nginx/index.html
 
   - name: write nginx.conf
     action: template src=templates/nginx.conf.j2 dest=/etc/nginx/nginx.conf
