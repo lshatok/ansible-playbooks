@@ -37,14 +37,21 @@ directive in the ./templates/nginx.conf.j2 file.
 ## Example  /etc/ansible/hosts entry
 # 
  [webservers]
- 10.10.10.108 ansible_ssh_user=nathan
+ 10.10.10.108 ansible_ssh_user=root
 
  Note, this solution was tested on Ubuntu 13 and Ubuntu 14 LTS servers and will run with a sudo user id
- to run the ansible playbook
+
+ To run the ansible playbook:
 
 
 ``` bash
-$ ansible-playbook nginx.yml -K 
+$ ansible-playbook nginx.yml -k (provided you unstalled sshpass) to use the password on the commandline
+
+or
+
+ansible-playbook nginx.yml -K (if you are using ssh keys)
+
+
 ```
 
 #### you will be asked for your user's password 
