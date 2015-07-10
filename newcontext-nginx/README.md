@@ -47,7 +47,7 @@ directive in the ./templates/nginx.conf.j2 file.
 
 
 ``` bash
-$ ansible-playbook nginx.yml -k (provided you unstalled sshpass) to use the password on the commandline
+$ ansible-playbook nginx.yml -k (provided you unstalled sshpass) to use the password on the command line
 
 or
 
@@ -56,13 +56,9 @@ ansible-playbook nginx.yml -K (if you are using ssh keys)
 
 ```
 
-#### you will be asked for your user's password 
-
-
-
 ## vhost-redirect
 
-This playbook add a simple redirect vhost for nginx.
+To use the playbook to add a simple redirect vhost for nginx.
 
 ### Vars
 
