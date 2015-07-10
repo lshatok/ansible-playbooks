@@ -34,10 +34,8 @@ directive in the ./templates/nginx.conf.j2 file.
  to include your target nginx server i.e. 10.10.10.108
 
  2 Edit the ansible_ssh_user id with your server's account ssh id.
+ Example  /etc/ansible/hosts entry
 
-
-## Example  /etc/ansible/hosts entry
-# 
  [webservers]
  10.10.10.108 ansible_ssh_user=root
 
