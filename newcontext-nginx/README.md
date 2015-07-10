@@ -53,23 +53,4 @@ or
 $ ansible-playbook newcontext-nginx.yml -K (if you are using ssh keys)
 
 
-```
 
-## vhost-redirect
-
-To use the playbook to add a simple redirect vhost for nginx.
-
-### Vars
-
-* **name**: The vhost name
-    * Type: String
-    * Default: redirect_$server_name
-* **listen**:
-    * Type: String
-    * Default: *:8000
-* **server_name**: The server domain name
-    * Type: String
-    * Default:  defined in ansible webservers hosts directive
-* **redirect_url**: The redirect URL
-    * Type: String
-    * Default: http://www.$server_name
