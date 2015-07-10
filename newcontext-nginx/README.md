@@ -3,6 +3,8 @@ nginx
 
 This playbook install the nginx package on a given host serving files from /usr/share/nginx/html directory.
 
+A custom newcontext index file will be served from /usr/share/nginx/html.
+
 To edit default subdirectory location change the location directive in the ./templates/nginx.conf.j2 file.
 
 The ngnx service will run on port 8000 by default, to edit the default port make changes to the listen 
@@ -28,7 +30,7 @@ directive in the ./templates/nginx.conf.j2 file.
     * Default: 768
 
 ### Usage ###
- 1 Edit the webserver directive in your /etc/ansible/hosts file or your local .ansible/hosts file
+ 1 Edit the webserver directive in your /etc/ansible/hosts file or your local .ansible/hosts file (you can use a sample host file which is included herein)
  to include your target nginx server i.e. 10.10.10.108
 
  2 Edit the ansible_ssh_user id with your server's account ssh id.
