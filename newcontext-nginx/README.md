@@ -1,4 +1,4 @@
-nginx
+newcontext-nginx
 =====
 
 This playbook install the nginx package on a given host serving files from /usr/share/nginx/html directory.
@@ -43,13 +43,12 @@ directive in the ./templates/nginx.conf.j2 file.
 
  To run the ansible playbook:
 
-
 ``` bash
-$ ansible-playbook nginx.yml -k (provided you unstalled sshpass) to use the password on the command line
+$ ansible-playbook newcontext-nginx.yml -k (provided you unstalled sshpass) to use the password on the command line
 
 or
 
-ansible-playbook nginx.yml -K (if you are using ssh keys)
+$ ansible-playbook newcontext-nginx.yml -K (if you are using ssh keys)
 
 
 ```
