@@ -36,7 +36,7 @@ directive in the ./templates/nginx.conf.j2 file.
  2 Edit the ansible_ssh_user id with your server's account ssh id.
  Example  /etc/ansible/hosts entry
 
- [webservers]
+ [webservers]\n
  10.10.10.108 ansible_ssh_user=root
 
  Note, this solution was tested on Ubuntu 13 and Ubuntu 14 LTS servers and will run with a sudo user id
