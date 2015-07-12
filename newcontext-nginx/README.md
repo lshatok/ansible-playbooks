@@ -89,22 +89,16 @@ retrieve the author's solution from Github.
 
 1. Describe the most difficult/painful hurdle you had to overcome in implementing your solution.
 
-The most painful or difficult was deciding whether to use chef or ansible but I have decided on 
-
-Ansible since it's simple, doesn't have any prerequisites apart from ssh and so does not assume 
-
-that any agents are running on a target machine.
+The most painful or difficult was deciding whether to use chef or ansible but I have decided on Ansible since it's simple, doesn't have any prerequisites apart from ssh and so does not assume that any agents are running on a target machine.
 
 2. Describe which puppet related concept you think is the hardest for new users to grasp.
 
-Although I did the project in Ansible, I believe that the hardest thing for the new Puppet users to 
-
-grasp would be the catalog of classes.
+Although I did the project in Ansible, I believe that the hardest thing for the new Puppet users to grasp would be the catalog of classes.
 
 3. Please comment on the concept embodied by the second requirement of the solution(ii)
 ensure that subsequent applications of the solution do not cause failures or repeat redundant configuration tasks
 
-The playbook should will only install nginx package if it is not installed already. The configuration files do get overwritten, but the playbook restarts services in between the configuration rewrites. 
+The playbook should will only install nginx package if it is not installed already. The configuration files do no get overwritten using Ansible rules.
 
 4. Where did you go to find information to help you in the build process?
 
