@@ -29,7 +29,7 @@ To edit default subdirectory location change the location directive in the ./tem
 The ngnx service will run on port 8000 by default, to edit the default port make changes to the listen 
 directive in the ./templates/nginx.conf.j2 file. 
 
-
+```
 ### Vars
 
 * **delete_default_vhost**: Delete or not default vhost
@@ -47,7 +47,7 @@ directive in the ./templates/nginx.conf.j2 file.
 * **worker_connections**:
     * Type: Integer
     * Default: 768
-
+```
 ### Usage ###
  1 Edit the webserver directive in your /etc/ansible/hosts file or your local .ansible/hosts file (you can use a sample host file which is included herein)
  to include your target nginx server i.e. 10.10.10.108
@@ -55,12 +55,11 @@ directive in the ./templates/nginx.conf.j2 file.
  2 Edit the ansible_ssh_user id with your server's account ssh id.
  
  Example  /etc/ansible/hosts entry
-
+```
  [webservers]
- 
- 10.10.10.108 ansible_ssh_user=root
-
- Note, this solution was tested on Ubuntu 13 and Ubuntu 14 LTS servers and will run with a sudo user id
+  10.10.10.108 ansible_ssh_user=root
+```
+Note, this solution was tested on Ubuntu 13 and Ubuntu 14 LTS servers and will run with a sudo user id
 
  To run the ansible playbook:
 
