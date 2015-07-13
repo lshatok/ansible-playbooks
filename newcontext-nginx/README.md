@@ -69,7 +69,7 @@ $ ansible-playbook newcontext-nginx.yml -K (if you are using ssh keys)
 
 ```
 
-Questions for the tech quiz:
+##Questions for the tech quiz:##
 
 
 1) Describe the most difficult/painful hurdle you had to overcome in implementing your solution.
