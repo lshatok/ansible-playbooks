@@ -11,10 +11,9 @@ specified in the playbook in this solution will run. For development and testing
 
 for Windows x64 was used: (http://download.virtualbox.org/)
 
-In addition, it is assumed that the user has a variant of git installed on their system in order to 
+In addition, it is assumed that the user has a variant of git installed on their system in order to retrieve the author's solution from Github.
 
-retrieve the author's solution from Github.
-
+Note, this solution was tested on Ubuntu 13 and Ubuntu 14 LTS servers and will run with a root or sudo user id
 
 This playbook install the nginx package on a given host serving files from /usr/share/nginx/html directory.
 
@@ -55,7 +54,6 @@ directive in the ./templates/nginx.conf.j2 file.
  [webservers]
   10.10.10.108 ansible_ssh_user=root
 ```
-Note, this solution was tested on Ubuntu 13 and Ubuntu 14 LTS servers and will run with a sudo user id
 
  To run the ansible playbook:
 
