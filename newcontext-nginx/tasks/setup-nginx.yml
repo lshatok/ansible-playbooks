@@ -1,16 +1,21 @@
 ---
   - name: install nginx
     action: apt name=nginx
-  
-  - name: install default newcontext index.html
-    action: template src=templates/newcontext-index.html dest=/usr/share/nginx/html/index.html
 
-  - name: write nginx.conf
-    action: template src=templates/nginx.conf.j2 dest=/etc/nginx/nginx.conf
+# Copy the custom newcontext index.html if it exists, do nothing
+  - shell: echo "Copying default newcontext-index.html to target"
+  - copy: src=templates/newcontext-index.html dest=/usr/share/nginx/html/index.html force=no
+
+# Copy the custom nginx.conf file, if it exists, do nothing
+  - shell: echo "Copying custom nginx.conf to target"
+  - copy: src=templates/nginx.conf.j2 dest=/etc/nginx/nginx.conf force=no
+
+# Restart nginx
     notify:
       - restart nginx
 
+# Delete default vhgost if any
   - name: delete default vhost
-    action: file path=/etc/nginx/sites-enabled/default state=absent
+    action: file path=/etc/nginx/sites-enabled/default state=absent force=no
     notify:
       - restart nginx
