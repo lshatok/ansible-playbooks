@@ -1,12 +1,5 @@
 
 
-
-
-
-
-
-
-
 newcontext-nginx
 =====
 
@@ -18,6 +11,9 @@ specified in the playbook in this solution will run. For development and testing
 
 for Windows x64 was used: (http://download.virtualbox.org/)
 
+In addition, it is assumed that the user has a variant of git installed on their system in order to 
+
+retrieve the author's solution from Github.
 
 
 This playbook install the nginx package on a given host serving files from /usr/share/nginx/html directory.
@@ -73,38 +69,27 @@ $ ansible-playbook newcontext-nginx.yml -K (if you are using ssh keys)
 
 ```
 
-Prerequisites
+Questions for the tech quiz:
 
-The latest version of virtual box should be installed to ensure that the Ansible server boxes 
 
-specified in the playbook in this solution will run. For development and testing, Virtualbox 4.3.28 
-
-for Windows x64 was used: (http://download.virtualbox.org/)
-
-Ansible is available for all major x86_64 OS's, including Linux: http://www.ansible.com
-
-In addition, it is assumed that the user has a variant of git installed on their system in order to 
-
-retrieve the author's solution from Github.
-
-1). Describe the most difficult/painful hurdle you had to overcome in implementing your solution.
+1) Describe the most difficult/painful hurdle you had to overcome in implementing your solution.
 
 The most painful or difficult was deciding whether to use chef or ansible but I have decided on Ansible since it's simple, doesn't have any prerequisites apart from ssh and so does not assume that any agents are running on a target machine.
 
-2). Describe which puppet related concept you think is the hardest for new users to grasp.
+2) Describe which puppet related concept you think is the hardest for new users to grasp.
 
 Although I did the project in Ansible, I believe that the hardest thing for the new Puppet users to grasp would be the catalog of classes.
 
-3). Please comment on the concept embodied by the second requirement of the solution(ii)
+3) Please comment on the concept embodied by the second requirement of the solution(ii)
 ensure that subsequent applications of the solution do not cause failures or repeat redundant configuration tasks
 
 The playbook should will only install nginx package if it is not installed already. The configuration files do no get overwritten using Ansible rules.
 
-4). Where did you go to find information to help you in the build process?
+4) Where did you go to find information to help you in the build process?
 
 My own EverNotes and Google.
 
-5). In a couple paragraphs explain what automation means to you and why it is important to an organization's infrastructure design strategy.
+5) In a couple paragraphs explain what automation means to you and why it is important to an organization's infrastructure design strategy.
 
 Automation is the process of enabling operating systems, software, and processes to independently perform mundane, often repeatable or time consuming tasks. For example when a company launches a new software product; normally this requires multiple new servers and service 'stacks' for development, testing & collaboration. In a world before automation a number of manual steps was required - installation, network and os provisioning, os and service configuration, as well as health & dependecy checks. In case of continous product delivery & integration, developers check in code daily and an individual build & deploy enviornment is created for each code commit.
 
